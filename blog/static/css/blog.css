@@ -8,7 +8,7 @@
   text-decoration: none;
   font-size: 36pt;
 }
-.context {
+.content {
   margin-left: 40px;
 }
 h1, h2, h3, h4, p {
@@ -29,4 +29,10 @@ h1, h2, h3, h4, p {
 
 .post h1 a:visited {
   color: purple;
+}
+.post-form-blog textarea {
+  width: 100%;
+}
+.post-form-blog .btn-primary{
+  float: right;
 }
