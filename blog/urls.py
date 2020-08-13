@@ -2,7 +2,7 @@ from django.urls import path
 
 from . import views
 
-from django.contrib.auth.views import LoginView
+
 
 urlpatterns = [
     path('', views.post_list, name='post_list'),
@@ -12,5 +12,5 @@ urlpatterns = [
     path('drafts/', views.post_draft_list, name='post_draft_list'),
     path('post/<int:pk>/publish/', views.post_publish, name='post_publish'),
     #path('accounts/login/', auth_views.login, name='login'),
-    path('accounts/login/', LoginView.as_view(), name='login'),
+
 ]

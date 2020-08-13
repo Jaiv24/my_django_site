@@ -15,10 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
+    path('accounts/login/', LoginView.as_view(), name='login'),
     # 127.0.0.1:8000/ {goes to home page}
+    path('accounts/logout/', LogoutView.as_view(), name='logout'),
     path('', include('blog.urls')),
 ]

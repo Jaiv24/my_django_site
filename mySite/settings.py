@@ -28,6 +28,9 @@ ALLOWED_HOSTS = []
 
 LOGIN_REDIRECT_URL = 'post_list'
 
+# this will redirect to / = home page after logout
+LOGOUT_REDIRECT_URL = '/'
+
 # Application definition
 
 INSTALLED_APPS = [
