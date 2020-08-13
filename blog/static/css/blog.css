@@ -36,9 +36,10 @@ h1, h2, h3, h4, p {
 .post-form-blog .btn-primary{
   float: right;
 }
-.top-menu{
+.top-menu, .top-menu:hover{
   color: #fffdd0;
   float: right;
   margin-right: 20px;
-  font-size: 26pt;
+  font-size: 21pt;
+  text-decoration: none;
 }
