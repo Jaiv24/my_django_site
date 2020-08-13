@@ -20,5 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # 127.0.0.1:8000/ {goes to home page}
-    path('', include('blog.urls'))
+    path('', include('blog.urls')),
 ]
