@@ -17,6 +17,7 @@ def post_detail(request, pk):
     stuff_for_frontend = {'post': post}
     return render(request, 'blog/post_detail.html', stuff_for_frontend)
 
+
 @login_required
 def post_new(request):
     if request.method == 'POST':
@@ -31,6 +32,7 @@ def post_new(request):
         form = PostForm()
         stuff_for_frontend = {'form': form}
     return render(request, 'blog/post_edit.html', stuff_for_frontend)
+
 
 @login_required
 def post_edit(request, pk):
@@ -48,17 +50,20 @@ def post_edit(request, pk):
         stuff_for_frontend = {'form': form, 'post': post}
     return render(request, 'blog/post_edit.html', stuff_for_frontend)
 
+
 @login_required
 def post_draft_list(request):
     posts = Post.objects.filter(published_date__isnull=True).order_by('-created_date')
-    stuff_for_frontend = {'posts':posts}
+    stuff_for_frontend = {'posts': posts}
     return render(request, 'blog/post_draft_list.html', stuff_for_frontend)
+
 
 @login_required
 def post_publish(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.publish()
     return redirect('post_detail', pk=pk)
+
 
 def add_comment_to_post(request, pk):
     post = get_object_or_404(Post, pk=pk)
@@ -75,3 +80,9 @@ def add_comment_to_post(request, pk):
         form = CommentForm()
         stuff_for_frontend = {'form': form}
     return render(request, 'blog/add_comment_to_post.html', stuff_for_frontend)
+
+
+def comment_remove(request, pk):
+    comment = get_object_or_404(Comment, pk=pk)
+    comment.delete()
+    return redirect('post_detail', pk=comment.post.pk)
