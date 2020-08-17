@@ -25,6 +25,7 @@ h1, h2, h3, h4, p {
 
 .post h1 a {
   color: #000000;
+  text-decoration: none;
 }
 
 .post h1 a:visited {
@@ -43,6 +44,6 @@ h1, h2, h3, h4, p {
   font-size: 21pt;
   text-decoration: none;
 }
-.comment {
-  margin: 20px 20px 0 20px;
-}
+/*.comment {*/
+/*  margin: 20px 20px 0 20px;*/
+/*}*/
