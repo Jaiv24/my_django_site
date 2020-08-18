@@ -8,8 +8,6 @@
                 </div>
             <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
             <p>{{ post.text|truncatechars:50 }}</p>
-
-            <a href="{% url 'post_detail' pk=post.pk %}">{{ post.approved_comments.count }} Comments</a>
             </div>
             {% endfor %}
     {% endblock %}
