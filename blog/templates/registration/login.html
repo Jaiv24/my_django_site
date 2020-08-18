@@ -7,4 +7,7 @@
     {{ form.as_p }}
         <button type="submit" class="btn btn-primary">Login</button>
     </form>
-{% endblock %}
+<div style="padding-top: 10px">
+<a href="{% url 'signup' %}">or sign up here</a>
+</div>
+    {% endblock %}
