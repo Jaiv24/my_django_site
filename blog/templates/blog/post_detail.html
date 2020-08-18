@@ -1,5 +1,4 @@
 {% extends 'blog/base.html'%}
-{% load markdownify %}
 {% block title %} {{ post.title }} {% endblock %}
     {% block content %}
         <div class="post">
@@ -15,7 +14,7 @@
                 <a href="{% url 'post_edit' pk=post.pk %}"><i class="fas fa-user-edit fa-2x" style="color: #339af0; padding-top: 10px; padding-left: 10px"></i></a>
             {% endif %}
             <h1>{{ post.title }}</h1>
-            <p> {{ post.text| markdown | safe }}</p>
+            <p> {{ post.text|linebreaksbr}}</p>
         </div>
         <hr>
         <a href="{% url 'add_comment_to_post' pk=post.pk %}" class="btn btn-info">Add Comment</a>
@@ -30,7 +29,7 @@
                 <a href="{% url 'comment_remove' pk=comment.pk %}"><i class="fas fa-user-minus"></i></a>
                 {% endif %}
                 <strong>{{ comment.author }}</strong>
-                    <p>{{ comment.text | markdown | safe }}</p>
+                    <p>{{ comment.text }}</p>
             {% endif %}
         {% empty %}
             <p>No comments yet...</p>
