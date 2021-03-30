@@ -11,7 +11,7 @@ Markdown==3.2.2
 markdownify==0.5.1
 mccabe==0.6.1
 mistune==0.8.4
-Pygments==2.6.1
+Pygments==2.7.4
 pylint==2.5.3
 pytz==2020.1
 six==1.15.0
